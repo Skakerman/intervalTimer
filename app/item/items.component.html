@@ -1,0 +1,49 @@
+<!--<ActionBar title="My App" class="action-bar">
+</ActionBar>-->
+<GridLayout columns="*, auto, *" rows="auto, auto, auto" class="wrapper">
+    <StackLayout colspan="3" row="0" class="section">
+        <Label text="WORK" class="workRest workLabel" horizontalAlignment="center"></Label>
+        <GridLayout columns="*, auto, *" rows="*, *">
+            <!--Work Minute-->
+            <Button col="0" row="0" text="+" class="iterator" (tap)="changeWork('minute', 'plus')"></Button>
+            <Button col="0" row="1" text="-" class="iterator" (tap)="changeWork('minute', 'minus')"></Button>
+            <!--Work Seconds-->
+            <Button col="2" row="0" text="+" class="iterator" (tap)="changeWork('second', 'plus')"></Button>
+            <Button col="2" row="1" text="-" class="iterator" (tap)="changeWork('second', 'minus')"></Button>
+
+            <Label rowSpan="2" row="0" col="0" [text]="workMinutes" class="time" horizontalAlignment="center"></Label>
+            <Label rowSpan="2" row="0" col="1" text=":" class="time" horizontalAlignment="center"></Label>
+            <Label rowSpan="2" row="0" col="2" [text]="workSeconds" class="time" horizontalAlignment="center"></Label>
+        </GridLayout>
+    </StackLayout>
+    <StackLayout colspan="3" row="1" class="section">
+        <Label text="REST" class="workRest restLabel" horizontalAlignment="center"></Label>
+        <GridLayout columns="*, auto, *" rows="*, *">
+            
+            <!--Rest Mintue-->
+            <Button col="0" row="0" text="+" class="iterator" (tap)="changeRest('minute', 'plus')"></Button>
+            <Button col="0" row="1" text="-" class="iterator" (tap)="changeRest('minute', 'minus')"></Button>
+            <!--Rest Seconds-->
+            <Button col="2" row="0" text="+" class="iterator" (tap)="changeRest('second', 'plus')"></Button>
+            <Button col="2" row="1" text="-" class="iterator" (tap)="changeRest('second', 'minus')"></Button>
+
+            <Label rowSpan="2" row="0" col="0" [text]="restMinutes" class="time" horizontalAlignment="center"></Label>
+            <Label rowSpan="2" row="0" col="1" text=":" class="time" horizontalAlignment="center"></Label>
+            <Label rowSpan="2" row="0" col="2" [text]="restSeconds" class="time" horizontalAlignment="center"></Label>
+
+        </GridLayout>
+    </StackLayout>
+    <Button colspan="3" row="2" text="START" class="section startBtn" verticalAlignment="center"></Button>
+    <!--<Label row="2" colSpan="3" text="START" class="section" horizontalAlignment="center" verticalAlignment="center"></Label>-->
+    
+    <!--<Label row="0" colSpan="3" text="WORK" class="section workRest" horizontalAlignment="center" verticalAlignment="center"></Label>-->
+    <!--<Label row="0" col="0" [text]="workMinutes" class="section time" horizontalAlignment="center" verticalAlignment="center"></Label>
+    <Label row="0" col="1" text=":" class="section time" horizontalAlignment="center" verticalAlignment="center"></Label>
+    <Label row="0" col="2" [text]="workSeconds" class="section time" horizontalAlignment="center" verticalAlignment="center"></Label>-->
+
+    <!--<Label row="1" colSpan="3" text="REST" class="section workRest" horizontalAlignment="center" verticalAlignment="center"></Label>-->
+    <!--<Label row="1" col="0" [text]="restMinutes" class="section time" horizontalAlignment="center" verticalAlignment="center"></Label>
+    <Label row="1" col="1" text=":" class="section time" horizontalAlignment="center" verticalAlignment="center"></Label>
+    <Label row="1" col="2" [text]="restSeconds" class="section time" horizontalAlignment="center" verticalAlignment="center"></Label>-->
+
+</GridLayout>

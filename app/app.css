@@ -1,0 +1,46 @@
+.wrapper {
+    background-color: #3d81ee;
+}
+
+.section {
+    padding-top: 25;
+    padding-bottom: 25;
+
+    /*margin-bottom: 0;*/
+    /*padding-bottom: 0;*/
+    /*background-color: green;*/
+    font-size: 54px;
+}
+
+.workRest {
+    /*margin: 0;*/
+    /*padding: 0;*/
+    color: black;
+    font-size: 54;
+}
+
+.startBtn {
+    text-align: center;
+    opacity: 1;
+    background-color: transparent;
+    border-color: transparent;
+    border-width: 1;
+}
+
+.startBtn:highlighted {
+    background-color: tomato;
+    /*opacity: 1;*/
+}
+
+.time {
+    color: white;
+    font-size: 120;
+}
+
+Button {
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    opacity: 0;
+}
+

@@ -2,48 +2,46 @@ import { Component, OnInit } from "@angular/core";
 import { Page } from "ui/page";
 
 import { Timer } from "./timer";
-import { ItemService } from "./item.service"
+import { TimerService } from "./timer.service"
 
 @Component({
-    selector: "ns-items",
+    selector: "setup-timer",
     moduleId: module.id,
-    templateUrl: "./items.component.html",
-    styleUrls: ["./items.css"]
+    templateUrl: "./setup.component.html"
 })
 
-export class ItemsComponent implements OnInit {
+export class SetupComponent implements OnInit {
     timer: Timer;
     workTime: number = 120;
     restTime: number = 60;
-    workMinutes: number = 2;
-    workSeconds: string = "00";
-    restMinutes: number = 1;
-    restSeconds: string = "00";
-    // timer: Timer = {work: this.workTime, rest: this.restTime};
+    workMinutes: number;
+    workSeconds: string;
+    restMinutes: number;
+    restSeconds: string;
 
-    constructor(private page: Page, private timerService: ItemService) {}
+    constructor(private page: Page, private timerService: TimerService) {}
 
     ngOnInit(): void {
         this.page.actionBarHidden = true;
+        this.timer = {work: this.workTime, rest: this.restTime};
+        this.timerService.setTimer(this.workTime, this.restTime);
+        
         this.calcWorkTime();
         this.calcRestTime();
-        // console.dump(this.timer);
     }
 
     calcWorkTime() {
-        this.workMinutes = Math.floor(this.workTime / 60);
-        this.workSeconds = ("0" + (this.workTime - this.workMinutes * 60)).slice(-2).toString();
-        this.timer = {work: this.workTime, rest: this.restTime};
-        this.timerService.setTimer(this.timer);
-        // console.dump(this.timer);
+        this.timerService.setTimer(this.workTime, this.restTime);
+        let minsAndSecs = this.timerService.getMinsSecs('work');
+        this.workMinutes = minsAndSecs.mins;
+        this.workSeconds = minsAndSecs.secs;
     }
 
     calcRestTime() {
-        this.restMinutes = Math.floor(this.restTime / 60);
-        this.restSeconds = ("0" + (this.restTime - this.restMinutes * 60)).slice(-2).toString();
-        this.timer = {work: this.workTime, rest: this.restTime};
-        this.timerService.setTimer(this.timer);
-        // console.dump(this.timer);
+        this.timerService.setTimer(this.workTime, this.restTime);
+        let minsAndSecs = this.timerService.getMinsSecs('rest');
+        this.restMinutes = minsAndSecs.mins;
+        this.restSeconds = minsAndSecs.secs;
     }
 
     changeWork(timeUnit: string, change: string) {

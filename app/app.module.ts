@@ -3,8 +3,8 @@ import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 import { AppRoutingModule } from "./app.routing";
 import { AppComponent } from "./app.component";
 
-import { ItemService } from "./item/item.service";
-import { ItemsComponent } from "./item/items.component";
+import { TimerService } from "./item/timer.service";
+import { SetupComponent } from "./item/setup.component";
 import { ItemDetailComponent } from "./item/item-detail.component";
 
 @NgModule({
@@ -17,11 +17,11 @@ import { ItemDetailComponent } from "./item/item-detail.component";
     ],
     declarations: [
         AppComponent,
-        ItemsComponent,
+        SetupComponent,
         ItemDetailComponent
     ],
     providers: [
-        ItemService
+        TimerService
     ],
     schemas: [
         NO_ERRORS_SCHEMA

@@ -3,7 +3,7 @@ import { ActivatedRoute } from "@angular/router";
 import { Page } from "ui/page";
 
 import { Timer } from "./timer";
-import { ItemService } from "./item.service";
+import { TimerService } from "./timer.service";
 
 @Component({
     selector: "ns-details",
@@ -15,13 +15,13 @@ export class ItemDetailComponent implements OnInit {
 
     constructor(
         private page: Page,
-        private itemService: ItemService,
+        private timerService: TimerService,
         private route: ActivatedRoute
     ) { }
 
     ngOnInit(): void {
         this.page.actionBarHidden = true;
-        this.timer = this.itemService.getTimer();
+        this.timer = this.timerService.getTimer();
         // console.dump(this.timer);
     }
 }

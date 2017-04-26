@@ -1,7 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
+import { Page } from "ui/page";
 
-import { Item } from "./item";
+import { Timer } from "./timer";
 import { ItemService } from "./item.service";
 
 @Component({
@@ -10,15 +11,17 @@ import { ItemService } from "./item.service";
     templateUrl: "./item-detail.component.html",
 })
 export class ItemDetailComponent implements OnInit {
-    item: Item;
+    timer: Timer;
 
     constructor(
+        private page: Page,
         private itemService: ItemService,
         private route: ActivatedRoute
     ) { }
 
     ngOnInit(): void {
-        const id = +this.route.snapshot.params["id"];
-        this.item = this.itemService.getItem(id);
+        this.page.actionBarHidden = true;
+        this.timer = this.itemService.getTimer();
+        // console.dump(this.timer);
     }
 }

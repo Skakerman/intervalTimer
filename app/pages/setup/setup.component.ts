@@ -1,19 +1,19 @@
 import { Component, OnInit } from "@angular/core";
 import { Page } from "ui/page";
 
-import { Timer } from "./timer";
-import { TimerService } from "./timer.service"
+import { Timer } from "../timer/timer";
+import { TimerService } from "../timer/timer.service"
 
 @Component({
     selector: "setup-timer",
     moduleId: module.id,
-    templateUrl: "./setup.component.html"
+    templateUrl: "./setup.html"
 })
 
 export class SetupComponent implements OnInit {
     timer: Timer;
-    workTime: number = 120;
-    restTime: number = 60;
+    workTime: number = 5;
+    restTime: number = 3;
     workMinutes: number;
     workSeconds: string;
     restMinutes: number;

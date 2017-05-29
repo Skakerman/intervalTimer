@@ -3,9 +3,9 @@ import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 import { AppRoutingModule } from "./app.routing";
 import { AppComponent } from "./app.component";
 
-import { TimerService } from "./item/timer.service";
-import { SetupComponent } from "./item/setup.component";
-import { ItemDetailComponent } from "./item/item-detail.component";
+import { TimerService } from "./pages/timer/timer.service";
+import { SetupComponent } from "./pages/setup/setup.component";
+import { TimerComponent } from "./pages/timer/timer.component";
 
 @NgModule({
     bootstrap: [
@@ -18,7 +18,7 @@ import { ItemDetailComponent } from "./item/item-detail.component";
     declarations: [
         AppComponent,
         SetupComponent,
-        ItemDetailComponent
+        TimerComponent
     ],
     providers: [
         TimerService

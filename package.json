@@ -6,19 +6,19 @@
   "nativescript": {
     "id": "org.nativescript.intervalTimer",
     "tns-android": {
-      "version": "3.0.0"
+      "version": "3.0.1"
     }
   },
   "dependencies": {
     "@angular/animations": "~4.0.0",
-    "@angular/common": "^4.1.2",
-    "@angular/compiler": "^4.1.2",
-    "@angular/core": "^4.1.2",
-    "@angular/forms": "^4.1.2",
-    "@angular/http": "^4.1.2",
-    "@angular/platform-browser": "^4.1.2",
+    "@angular/common": "4.1.2",
+    "@angular/compiler": "4.1.2",
+    "@angular/core": "4.1.2",
+    "@angular/forms": "4.1.2",
+    "@angular/http": "4.1.2",
+    "@angular/platform-browser": "4.1.2",
     "@angular/platform-browser-dynamic": "~4.0.0",
-    "@angular/router": "^4.1.2",
+    "@angular/router": "4.1.2",
     "nativescript-angular": "^3.0.0",
     "nativescript-theme-core": "~1.0.2",
     "reflect-metadata": "~0.1.8",

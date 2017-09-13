@@ -7,7 +7,7 @@ export class TimerService {
     private timer = new Timer();
 
     getMinsSecs(type: string) {
-        console.dump(this.timer);
+        console.dir(this.timer);
         let minutes = Math.floor(this.timer[type] / 60);
         let seconds = ("0" + (this.timer[type] - minutes * 60)).slice(-2).toString();
         console.log(minutes);
